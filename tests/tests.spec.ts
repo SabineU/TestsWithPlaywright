@@ -81,7 +81,8 @@ test.describe('Validation 1', () => {
         await inventoryPage.filterItemsByName(page, requiredData.filterByNameAZ);
 
         // step3. Validate that the sorting is right
-        await expect(await inventoryPage.sortByNameAZ(page)).toBeTruthy();
+        await expect(await inventoryPage.checkIfSortedByName(page)).toBeTruthy();
+        //await expect((await inventoryPage.checkIfSorted(inventoryPage.createItemNameArray(page)))).toBeTruthy();
     }); 
     test('should allow to sort items by Name Z-A', async ({ page}) => {
         // Step1. Log in as a `standard user`
@@ -91,7 +92,7 @@ test.describe('Validation 1', () => {
         await inventoryPage.filterItemsByName(page, requiredData.filterByNameZA);
         
         // step3. Validate that the sorting is right
-        await expect(await inventoryPage.sortByNameZA(page)).toBeTruthy();
+        await expect(await inventoryPage.checkIfSortedByName(page)).toBeTruthy();
       }); 
   });
 
@@ -104,10 +105,7 @@ test.describe('Validation 1', () => {
         await inventoryPage.filterItemsByPrice(page, requiredData.filterByPriceLH);
 
         // step3. Validate that the sorting is right
-        await expect(inventoryPage.sortByPriceLH(page)).toBeTruthy();
-        //console.log((await page.locator('div.inventory_item:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1)').innerText()).replace('$',''));
-        //console.log(await inventoryPage.sortByPriceLH);
-        //console.log((await page.locator('(//div[@class="inventory_item_price"])[1]').innerHTML()).replace('$',''))
+        await expect(inventoryPage.checkIfSortedByPrice).toBeTruthy();
     }); 
     test('should allow to sort items by Price High - Low', async ({ page}) => {
         // Step1. Log in as a `standard user`
@@ -117,7 +115,7 @@ test.describe('Validation 1', () => {
         await inventoryPage.filterItemsByName(page, requiredData.filterByNameZA);
         
         // step3. Validate that the sorting is right
-        //await expect(await inventoryPage.sortByNameZA(page)).toBeTruthy();
+        await expect(inventoryPage.checkIfSortedByPrice).toBeTruthy();
       }); 
   });
 

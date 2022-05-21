@@ -7,7 +7,7 @@
     "test": "playwright test --reporter=line,allure-playwright",
     "testInHeadedMode": "playwright test --headed --reporter=line,allure-playwright",
     "allureReport": "allure generate ./allure-results --clean",
-    "openReport": "npx allure open ./allure-report"
+    "openReport": "allure open ./allure-report"
   },
   "repository": { 
     "type": "git",

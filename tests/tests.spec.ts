@@ -27,7 +27,7 @@ test.beforeEach(async ({ page}) => {
 
 test.describe('Validation 1', () => {
     test('should allow to purchase item', async ({ page}) => {
-      // Step1. Log in as a `standard user` is in the beforeEach block
+      // Step1. Log in as a `standard user`
       await loginPage.login(page, requiredData.username_standardUser, requiredData.password);
 
       // Step2. Find an item by name, then add it to the cart
@@ -66,7 +66,7 @@ test.describe('Validation 1', () => {
       // Step7. Finish the purchase
       await checkoutStepTwoPage.clickFinishButton(page);
 
-      // Step7. Validate that the website confirms the order
+      // Step8. Validate that the website confirms the order
       await expect(page.locator(checkoutComletePage.checkoutCompleteTitleLocator)).toHaveText(requiredData.checkoutCompleteTitle);
       await expect(page.locator(checkoutComletePage.successMessageLocator)).toHaveText(requiredData.successOrderingMessage);
     });

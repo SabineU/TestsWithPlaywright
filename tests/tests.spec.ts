@@ -82,7 +82,6 @@ test.describe('Validation 1', () => {
 
         // step3. Validate that the sorting is right
         await expect(await inventoryPage.checkIfSortedByName(page)).toBeTruthy();
-        //await expect((await inventoryPage.checkIfSorted(inventoryPage.createItemNameArray(page)))).toBeTruthy();
     }); 
     test('should allow to sort items by Name Z-A', async ({ page}) => {
         // Step1. Log in as a `standard user`

@@ -11,9 +11,11 @@ Once this repository is cloned into a local folder:
 |ID|Description| Command |
 | :---: | :--- | :--- |
 |1|Run all tests in headless mode|`npm run test` or `npx playwright test`|
-|2|Run one test|`npm run testInHeadedMode` or `npx playwright test --g "test name"`|
-|3|Generate allure report|`npm run allureReport` or `npm run allureReport`|
-|4|Open report|`npm run openReport` or `allure open ./allure-report`|
+|2|Run all tests in headed mode|`npm run testInHeadedMode` or `npx playwright test --headed`|
+|3|Run one test in headless mode|`npx playwright test --g "test name"`|
+|4|Run one test in headed mode|`npx playwright test --headed --g "test name"`|
+|5|Generate allure report|`npm run allureReport` or `allure generate ./allure-results --clean`|
+|6|Open report|`npm run openReport` or `allure open ./allure-report`|
 
   
 ## Tests coverage

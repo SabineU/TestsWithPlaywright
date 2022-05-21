@@ -13,6 +13,7 @@ jobs:
           name: Install npm dependencies
           command: |
             npm install  
+            npx playwright install --with-deps
       - run:
           name: Run tests
           command: |
